@@ -1,6 +1,8 @@
 package com.kosavpa.first.boot.example.dao.entity.users;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -14,10 +16,13 @@ import java.util.Collection;
 
 @Data
 @Entity
+@Builder
 @NoArgsConstructor
-@Table(name = "user_entity")
+@AllArgsConstructor
+@Table(name = "blog_user")
 public class UserEntity implements UserDetails {
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "username")
@@ -25,13 +30,7 @@ public class UserEntity implements UserDetails {
     @Column(name = "password")
     private String password;
     @Column(name = "role")
-    private String role;
-
-    public UserEntity(String username, String password, String role) {
-        this.username = username;
-        this.password = password;
-        this.role = role;
-    }
+    private Role role;
 
     @Override
     public boolean isAccountNonExpired() {
@@ -55,6 +54,6 @@ public class UserEntity implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.asList(new SimpleGrantedAuthority(role));
+        return Arrays.asList(new SimpleGrantedAuthority(role.getRole()));
     }
 }

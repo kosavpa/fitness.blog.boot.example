@@ -19,8 +19,6 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain webSecurity(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
-                .csrf()
-                    .disable()
                 .authorizeRequests()
                     .antMatchers("/blog/*/delete", "/add", "/blog/*/redact/").hasRole("ADMIN")
                     .antMatchers("/registration").not().fullyAuthenticated()
@@ -34,19 +32,13 @@ public class WebSecurityConfig {
                 .and()
                     .logout()
                     .logoutSuccessUrl("/")
+                    .deleteCookies("JSESSIONID")
+                .and()
+                .rememberMe()
+                    .key("rm-secret")
+                    .tokenValiditySeconds(25200)
                 .and()
                 .build();
-    }
-
-    @Bean
-    public ApplicationRunner dataLoader(UserRepository userRepo, PasswordEncoder encoder) {
-        return args -> {
-            if (userRepo.findByUsername("ADMIN") == null){
-                userRepo.save(new UserEntity(
-                        "ADMIN",
-                        encoder.encode("pwd"),
-                        "ROLE_ADMIN"));}
-        };
     }
 
     @Bean

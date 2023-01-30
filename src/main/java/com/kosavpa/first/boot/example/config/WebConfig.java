@@ -13,9 +13,11 @@ public class WebConfig {
     @Bean
     public CommonsMultipartResolver multipartResolver(){
         CommonsMultipartResolver multipart = new CommonsMultipartResolver();
-        multipart.setMaxUploadSize(11 * 1024);
+        multipart.setMaxUploadSize(1024 * 1024 * 4);
+
         return multipart;
     }
+
     @Bean
     @Order(0)
     public MultipartFilter multipartFilter() {
