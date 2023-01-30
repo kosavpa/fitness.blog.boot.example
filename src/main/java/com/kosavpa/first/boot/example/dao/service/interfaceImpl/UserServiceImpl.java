@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional(readOnly = true)
     public boolean isExist(String username){
-        return repository.existByUsername(username);
+        return repository.existsByUsername(username);
     }
 
     @Override
