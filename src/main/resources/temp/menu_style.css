@@ -1,0 +1,50 @@
+.main_contaner{
+    display: flex;
+    justify-content: space-between;
+    background-color: black
+}
+
+.header {
+    font-family: 'Montserrat';
+    font-size: 22px;
+    margin: 20px;
+    color:gold
+}
+
+.dropdown_menu {
+    margin: 10px
+}
+
+.drop_btn {
+    cursor: pointer;
+}
+
+.drop_btn:hover, .drop_btn:focus {
+    border-radius: 8px;
+    background-color: #676768;
+}
+
+.menu_list {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.menu_list a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.menu_list a:hover {
+    background-color: #ddd
+}
+
+.show {
+    display: block
+}
