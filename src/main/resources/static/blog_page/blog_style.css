@@ -1,0 +1,30 @@
+body{
+    background-image: url("blog_img.jpeg");
+}
+
+#articles_contaner{
+    margin-top:20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+#articles_contaner .article:first-child{
+    margin-top:120px;
+}
+
+.text_block_article{
+    color: gold;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.article{
+    display: flex;
+    justify-content: start;
+    padding: 5px;
+    border-radius: 8px;
+    margin: 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.935), rgba(80, 80, 80, 0.965), rgba(0,0,0,0.935));
+}

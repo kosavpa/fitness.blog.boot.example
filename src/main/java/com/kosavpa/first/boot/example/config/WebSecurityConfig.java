@@ -23,6 +23,7 @@ public class WebSecurityConfig {
                     .antMatchers("/blog/*/delete", "/add", "/blog/*/redact/").hasRole("ADMIN")
                     .antMatchers("/registration").not().fullyAuthenticated()
                     .antMatchers("/blog/*").authenticated()
+                    .antMatchers("/blog").permitAll()
                     .antMatchers("/**").permitAll()
                     .anyRequest().authenticated()
                 .and()

@@ -24,7 +24,7 @@ public class RegistrationController {
 
     @GetMapping()
     public String registration(Model model) {
-        model.addAttribute("UserEntity", new UserEntity());
+        model.addAttribute("userEntity", new UserEntity());
 
         return "registration";
     }

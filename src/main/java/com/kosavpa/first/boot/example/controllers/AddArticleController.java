@@ -2,7 +2,7 @@ package com.kosavpa.first.boot.example.controllers;
 
 
 import com.kosavpa.first.boot.example.dao.entity.post.ArticleEntity;
-import com.kosavpa.first.boot.example.dao.repository.PostRepository;
+import com.kosavpa.first.boot.example.dao.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,11 +16,11 @@ import java.util.Calendar;
 @Controller
 @RequestMapping("/add")
 public class AddArticleController {
-    private PostRepository postRepository;
+    private ArticleRepository articleRepository;
 
     @Autowired
-    public void setPostRepository(PostRepository postRepository) {
-        this.postRepository = postRepository;
+    public void setPostRepository(ArticleRepository articleRepository) {
+        this.articleRepository = articleRepository;
     }
 
     @GetMapping
@@ -34,7 +34,7 @@ public class AddArticleController {
             @RequestParam String anons,
             @RequestParam String fullText
     ){
-        postRepository.save(
+        articleRepository.save(
                 ArticleEntity.builder()
                         .title(title)
                         .publicationDate(Calendar.getInstance().getTime())

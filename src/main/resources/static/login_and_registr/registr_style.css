@@ -1,0 +1,65 @@
+body{
+    background-image: url("login_and_registr_img.jpg")
+}
+
+#video_contaner{
+    margin-right: 50px
+}
+
+#main_contaner{
+    display: flex;
+    justify-content: end;
+    margin-top: 300px
+}
+
+#form_cantaner{
+    margin-top: 50px;
+    margin-right: 200px
+}
+
+#form_cantaner .login_input input{
+    width: 400px;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 22px;
+    font-family: serif;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0);
+    border: solid black;
+    border-radius: 10px
+}
+
+#form_cantaner .login_input div{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 26px;
+    font-family: fantasy;
+    font-weight: bold
+}
+
+#form_cantaner h1{
+    text-align: center;
+    font-family: fantasy;
+    font-weight: bold;
+    letter-spacing: 1px
+}
+
+#form_cantaner .submit_btn{
+    text-align: center;
+    margin-top: 20px
+}
+
+#form_cantaner .submit_btn button{
+    background-color: rgba(255, 255, 255, 0);
+    width: 135px;
+    height: 62px;
+    background-image: url("btn_registr.png");
+    background-size:cover;
+    border-radius: 10px;
+    border: none
+}
+
+#form_cantaner .submit_btn button:hover, button:focus{
+    background-color: #ffffff21;
+    cursor: pointer
+}

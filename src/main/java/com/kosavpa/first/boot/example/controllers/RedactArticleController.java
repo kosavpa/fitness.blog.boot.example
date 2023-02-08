@@ -2,7 +2,7 @@ package com.kosavpa.first.boot.example.controllers;
 
 
 import com.kosavpa.first.boot.example.dao.entity.post.ArticleEntity;
-import com.kosavpa.first.boot.example.dao.repository.PostRepository;
+import com.kosavpa.first.boot.example.dao.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,12 +13,12 @@ import java.util.Calendar;
 
 @Controller
 @RequestMapping("/blog/{id}/redact")
-public class RedactArticle {
-    private PostRepository postRepository;
+public class RedactArticleController {
+    private ArticleRepository articleRepository;
 
     @Autowired
-    public void setPostRepository(PostRepository postRepository) {
-        this.postRepository = postRepository;
+    public void setPostRepository(ArticleRepository articleRepository) {
+        this.articleRepository = articleRepository;
     }
 
     @GetMapping
@@ -26,8 +26,8 @@ public class RedactArticle {
             @PathVariable(value = "id") long id,
             Model model
     ){
-        if(postRepository.existsById(id)){
-            postRepository.findById(id).ifPresent(article -> model.addAttribute("article", article));
+        if(articleRepository.existsById(id)){
+            articleRepository.findById(id).ifPresent(article -> model.addAttribute("article", article));
 
             return "redact";
         }
@@ -43,7 +43,7 @@ public class RedactArticle {
             @PathVariable(value = "id") long id,
             Model model
     ){
-        postRepository.save(
+        articleRepository.save(
                 ArticleEntity.builder()
                         .id(id)
                         .title(title)

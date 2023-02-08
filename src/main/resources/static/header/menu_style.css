@@ -1,18 +1,19 @@
-.main_contaner{
+.main_header_contaner{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
     display: flex;
     justify-content: space-between;
-    background-color: black
-}
-
-.header {
-    font-family: 'Montserrat';
-    font-size: 22px;
-    margin: 20px;
-    color:gold
+    background-image: url("blog_header_img.png");
+    height: 90px;
+    width: 100%
 }
 
 .dropdown_menu {
-    margin: 10px
+    position: absolute;
+    right: 0;
+    margin: 20px
 }
 
 .drop_btn {
@@ -26,16 +27,18 @@
 
 .menu_list {
     display: none;
-    position: absolute;
-    background-color: #f1f1f1;
+    position: fixed;
+    right: 8px;
+    background-color: #474747;
     min-width: 160px;
     overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 .menu_list a {
-    color: black;
+    font-family: fantasy;
+    font-size: 20px;
+    color:gold;
     padding: 12px 16px;
     text-decoration: none;
     display: block;

@@ -8,7 +8,7 @@ window.onload = function() {
 }
 
 window.onclick = function(event) {
-  if (!event.target.matches("drop_btn")) {
+  if (!event.target.classList.contains("drop_btn")) {
     var menu_list = document.getElementById("drop_menu");
     
     if (menu_list.classList.contains("show")) {

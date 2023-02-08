@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/")
-public class MainPageController {
-    @Autowired
-    private ArticleService articleService;
+public class GeneralPageController {
 
+    private ArticleService articleService;
+    @Autowired
     public void setPostService(ArticleService service){
         this.articleService = service;
     }

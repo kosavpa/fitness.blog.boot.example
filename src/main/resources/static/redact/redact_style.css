@@ -1,0 +1,65 @@
+#main_contaner{
+    margin-left: 600px;
+    display: flex;
+    flex-flow: column;
+}
+
+#main_contaner div{
+    margin-top: 40px;
+}
+
+#main_contaner div:last-child{
+    margin-top: 20px;
+}
+
+#main_contaner input{
+    color: gold;
+    width: 650px;
+    height: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    border-color: rgba(240, 255, 255, 0.267);
+    background-color: rgba(255, 217, 0, 0.356);
+}
+
+#main_contaner textarea{
+    color: gold;
+    width: 650px;
+    height: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    border-color: rgba(240, 255, 255, 0.267);
+    background-color: rgba(255, 217, 0, 0.356);
+}
+
+body{
+    background-image: url("redact_img.jpg");
+}
+
+#main_contaner h1{
+    color: gold;
+    font-family: fantasy;
+}
+
+#main_contaner h2{
+    color: gold;
+    font-family: fantasy;
+    letter-spacing: 0.2mm;
+}
+
+#main_contaner button{
+    cursor: pointer;
+    background-color: rgba(255, 217, 0, 0.356);
+    border-radius: 10px;
+    letter-spacing: 0.2mm;
+    border-color: rgba(240, 255, 255, 0.267);
+    background-color: rgba(142, 156, 20, 0.082);
+}
+
+#main_contaner button:focus{
+    cursor: pointer;
+}
+
+#main_contaner button:hover{
+    background-color: rgba(240, 255, 255, 0.137);
+}

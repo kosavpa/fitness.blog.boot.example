@@ -2,7 +2,7 @@ package com.kosavpa.first.boot.example.dao.service.interfaceImpl;
 
 
 import com.kosavpa.first.boot.example.dao.entity.post.ArticleEntity;
-import com.kosavpa.first.boot.example.dao.repository.PostRepository;
+import com.kosavpa.first.boot.example.dao.repository.ArticleRepository;
 import com.kosavpa.first.boot.example.dao.service.Interface.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -19,10 +19,10 @@ import java.util.Optional;
 @Service
 @Transactional
 public class ArticleServiceImpl implements ArticleService {
-    private PostRepository repository;
+    private ArticleRepository repository;
 
     @Autowired
-    public void setRepository(PostRepository repository){
+    public void setRepository(ArticleRepository repository){
         this.repository = repository;
     }
 
@@ -51,7 +51,7 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     @Transactional(readOnly = true)
     public Page<ArticleEntity> pageableFindRequest() {
-        Pageable pageable = PageRequest.of(0, 4, Sort.by("date"));
+        Pageable pageable = PageRequest.of(0, 3, Sort.by("publicationDate"));
 
         return repository.findAll(pageable);
     }

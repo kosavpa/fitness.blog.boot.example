@@ -24,7 +24,7 @@ public class ArticleEntity {
     private Long id;
     @Column(name = "title")
     private String title;
-    @Column(name = "date")
+    @Column(name = "publication_date")
     @Temporal(TemporalType.DATE)
     private Date publicationDate;
     @Column(name = "anons")
