@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/html"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
       th:fragment="header">
   <link rel="stylesheet" th:href="@{/header/menu_style.css}">
 
@@ -8,9 +8,12 @@
     <div class="dropdown_menu">
       <img th:src="@{/header/menu_button.png}" class="drop_btn"/>
       <div id="drop_menu" class="menu_list">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a th:href="@{'/'}">Home</a>
+        <a sec:authorize="!isAuthenticated()" th:href="@{'/registration'}">Registration</a>
+        <a th:href="@{'/blog'}">Articles</a>
+        <a sec:authorize="!isAuthenticated()" th:href="@{'/login'}">Login</a>
+        <a sec:authorize="isAuthenticated()" th:href="@{'/logout'}">Logout</a>
+        <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{'/add'}">Add article</a>
       </div>
     </div>
   </div>

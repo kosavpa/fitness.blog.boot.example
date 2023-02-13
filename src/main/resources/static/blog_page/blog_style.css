@@ -1,5 +1,6 @@
 body{
     background-image: url("blog_img.jpeg");
+    background-attachment: fixed;
 }
 
 #articles_contaner{
@@ -15,6 +16,7 @@ body{
 }
 
 .text_block_article{
+    position:relative;
     color: gold;
     font-size: 20px;
     font-style: normal;
@@ -27,4 +29,10 @@ body{
     border-radius: 8px;
     margin: 20px;
     background: linear-gradient(rgba(0, 0, 0, 0.935), rgba(80, 80, 80, 0.965), rgba(0,0,0,0.935));
+}
+
+.text_block_article a{
+    position: absolute;
+    bottom: 30px;
+    color: gold;
 }

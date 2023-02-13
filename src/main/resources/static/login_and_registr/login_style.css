@@ -1,5 +1,6 @@
 body{
-    background-image: url("login_and_registr_img.jpg")
+    background-image: url("login_and_registr_img.jpg");
+    background-attachment: fixed;
 }
 
 #video_contaner{
@@ -37,6 +38,13 @@ body{
     font-weight: bold
 }
 
+#form_cantaner #remember-me{
+    margin-top: 10px;
+    font-size: 26px;
+    font-family: fantasy;
+    font-weight: bold
+}
+
 #form_cantaner h1{
     text-align: center;
     font-family: fantasy;
@@ -62,4 +70,12 @@ body{
 #form_cantaner .submit_btn button:hover, button:focus{
     background-color: #00000031;
     cursor: pointer
+}
+
+#checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #black;
+    border-radius: 0.25em;
+    margin-left: 50px;
 }

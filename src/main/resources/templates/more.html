@@ -8,10 +8,10 @@
     </head>
     <body>
         <header th:insert="blocks/header::header"></header>
-        <div id="main_contaner">
-            <h1 id="header">Заголовок</h1>
-            <p id="date">Дата статьи</p>
-            <div id="full_text">Текст статьи</div>
+        <div id="main_contaner" th:object="${article}">
+            <h1 id="header" th:text="*{title}">Заголовок</h1>
+            <p id="date" th:text="*{publicationDate}">Дата статьи</p>
+            <div id="full_text"  th:utext="*{fullText}">Текст статьи</div>
             <div id="btn_contaner">
                 <form method="get">
                     <button type="submit">
@@ -25,6 +25,6 @@
                 </form>
             </div>
         </div>
-        <div th:insert="blocks/footer::footer"></div>
+        <div id="footer" th:insert="blocks/footer::footer"></div>
     </body>
 </html>

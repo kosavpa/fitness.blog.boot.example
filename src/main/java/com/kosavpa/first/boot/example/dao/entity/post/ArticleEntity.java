@@ -29,7 +29,7 @@ public class ArticleEntity {
     private Date publicationDate;
     @Column(name = "anons")
     private String anons;
-    @Column(name = "full_text", columnDefinition = "varchar(1000)")
+    @Column(name = "full_text", columnDefinition = "longtext")
     private String fullText;
     @Transient
     private String formattedDate;

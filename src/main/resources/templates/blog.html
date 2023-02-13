@@ -8,13 +8,13 @@
     </head>
     <body>
         <header th:insert="blocks/header::header"></header>
-        <div id="articles_contaner">
+        <div id="articles_contaner" th:each="post : ${posts}">
             <div class="article">
                 <img th:src="@{/blog_page/kaban.png}">
                 <div class="text_block_article">
-                    <h3>Заголовок</h3>
-                    <p>Анонс статьи</p>
-                    <a>Детальнее</a>
+                    <h3 th:text="${post.title}">Заголовок</h3>
+                    <p th:text="${post.anons}">Анонс статьи</p>
+                    <a th:href="@{'/blog/' + ${post.id}}">Детальнее</a>
                 </div>
             </div>
         </div>

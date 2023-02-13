@@ -1,5 +1,6 @@
 body{
-    background-image: url("login_and_registr_img.jpg")
+    background-image: url("login_and_registr_img.jpg");
+    background-attachment: fixed;
 }
 
 #video_contaner{

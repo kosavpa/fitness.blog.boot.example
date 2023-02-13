@@ -36,6 +36,6 @@ public class GetArticleController {
                     model.addAttribute("article", article);
                 });
 
-        return "article";
+        return "more";
     }
 }

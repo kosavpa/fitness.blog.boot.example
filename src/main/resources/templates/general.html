@@ -13,21 +13,14 @@
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/i6z3vcbIOn0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/O7DgU_2ucUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <div class="article_container">
-                <button class="tablinks" id="first_btn">London</button>
-                <button class="tablinks" id="second_btn">Paris</button>
-                <button class="tablinks" id="third_btn">Tokyo</button>
-                <div id="London" class="tabcontent">
-                    <h3>London</h3>
-                    <p>London is the capital city of England.</p>
-                  </div>
-                  <div id="Paris" class="tabcontent">
-                    <h3>Paris</h3>
-                    <p>Paris is the capital of France.</p>
-                  </div>
-                  <div id="Tokyo" class="tabcontent">
-                    <h3>Tokyo</h3>
-                    <p>Tokyo is the capital of Japan.</p>
+            <div class="article_container" th:each="article : ${threePostForGeneral}">
+                <button class="tablinks" id="first_btn"></button>
+                <button class="tablinks" id="second_btn"></button>
+                <button class="tablinks" id="third_btn"></button>
+                <div th:id="'art_' + ${threePostForGeneral.indexOf(article)}" class="tabcontent">
+                    <h3 th:text="${article.title}"></h3>
+                    <p th:text="${article.anons}"></p>
+                    <a th:href="@{'/blog/' + ${article.id}}">Детальнее</a>
                   </div>
             </div>
         </div>

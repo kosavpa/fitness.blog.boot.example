@@ -12,7 +12,7 @@ first_btn.addEventListener("click", function () {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
 
-    document.getElementById("London").style.display = "block";
+    document.getElementById("art_0").style.display = "block";
     first_btn.className += " active";
 });
 
@@ -30,7 +30,7 @@ second_btn.addEventListener("click", function () {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
 
-    document.getElementById("Paris").style.display = "block";
+    document.getElementById("art_1").style.display = "block";
     second_btn.className += " active";
 });
 
@@ -48,7 +48,7 @@ third_btn.addEventListener("click", function () {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
 
-    document.getElementById("Tokyo").style.display = "block";
+    document.getElementById("art_2").style.display = "block";
     third_btn.className += " active";
 });
 

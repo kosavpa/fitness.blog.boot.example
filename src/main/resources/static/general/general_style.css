@@ -1,5 +1,6 @@
 body{
     background-image: url("general_img.jpg");
+    background-attachment: fixed;
 }
 
 .video_contaner{
@@ -46,4 +47,13 @@ body{
     color: gold;
     padding: 6px 12px;
     border-top: none
+}
+
+.tabcontent a{
+    color: gold;
+    text-decoration: none;
+}
+
+.tabcontent a:hover, a:visited{
+    color: rgb(255, 81, 0);
 }

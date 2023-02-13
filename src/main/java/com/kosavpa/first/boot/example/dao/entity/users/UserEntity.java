@@ -10,6 +10,8 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -26,10 +28,15 @@ public class UserEntity implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "username")
+    @NotBlank(message = "Username не может быть пустым")
+    @Size(min = 4, max = 14, message = "Проверьте логин!")
     private String username;
     @Column(name = "password")
+    @NotBlank(message = "Проверьте пароль!")
+    @Size(min = 6, max = 22, message = "Password должен быть от 6 и до 22 символов")
     private String password;
     @Column(name = "role")
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     @Override
