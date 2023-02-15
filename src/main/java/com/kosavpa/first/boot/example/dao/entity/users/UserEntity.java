@@ -28,12 +28,12 @@ public class UserEntity implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "username")
-    @NotBlank(message = "Username не может быть пустым")
-    @Size(min = 4, max = 14, message = "Проверьте логин!")
+    @NotBlank(message = "Проверьте логин, он не должен быть пустым!")
+    @Size(min = 4, max = 14, message = "Логин должен быть от 4 до 14 символов!")
     private String username;
     @Column(name = "password")
-    @NotBlank(message = "Проверьте пароль!")
-    @Size(min = 6, max = 22, message = "Password должен быть от 6 и до 22 символов")
+    @NotBlank(message = "Проверьте пароль, он не должен быть пустым!")
+    @Size(min = 6, max = 22, message = "Пароль должен быть от 6 и до 22 символов!")
     private String password;
     @Column(name = "role")
     @Enumerated(EnumType.STRING)

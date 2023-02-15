@@ -12,16 +12,18 @@
           <div id="form_cantaner">
             <h1>Вход в учетную запись</h1>
             <form th:action="@{/registration}" method="post" th:object="${userEntity}">
+              <ul class="errors">
+                <li th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></li>
+                <li th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></li>
+              </ul>
               <div class="login_input">
                 <div>Логин:</div>
                 <div>От 4 до 14 символов!</div>
-                <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
                 <input type="text" th:field="*{username}"/>
               </div>
               <div class="login_input">
                 <div>Пароль:</div>
                 <div>От 6 до 22 символов!</div>
-                <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}">asd</div>
                 <input type="password" th:field="*{password}"/>
               </div>
               <div class="submit_btn">

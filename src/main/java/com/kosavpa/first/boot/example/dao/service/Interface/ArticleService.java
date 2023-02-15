@@ -12,6 +12,7 @@ public interface ArticleService {
     ArticleEntity save(ArticleEntity post);
     Optional<ArticleEntity> findById(Long id);
     void deleteById(Long id);
-    Page<ArticleEntity> pageableFindRequest();
+    Page<ArticleEntity> pageableFindRequest(int page, int size, String sortBy);
     Iterable<ArticleEntity> findAll();
+    long count();
 }

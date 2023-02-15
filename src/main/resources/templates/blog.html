@@ -7,17 +7,24 @@
         <link rel="stylesheet" th:href="@{/blog_page/blog_style.css}">
     </head>
     <body>
-        <header th:insert="blocks/header::header"></header>
-        <div id="articles_contaner" th:each="post : ${posts}">
-            <div class="article">
-                <img th:src="@{/blog_page/kaban.png}">
-                <div class="text_block_article">
-                    <h3 th:text="${post.title}">Заголовок</h3>
-                    <p th:text="${post.anons}">Анонс статьи</p>
-                    <a th:href="@{'/blog/' + ${post.id}}">Детальнее</a>
+        <div id="main_contaner">
+            <header th:insert="blocks/header::header"></header>
+            <div id="articles_contaner" th:each="post : ${posts}">
+                <div class="article">
+                    <img th:src="${post.image}">
+                    <div class="text_block_article">
+                        <h3 th:text="${post.title}">Заголовок</h3>
+                        <p th:text="${post.anons}">Анонс статьи</p>
+                        <a th:href="@{'/blog/' + ${post.id}}">Детальнее</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pages_contaner">
+                <div th:each="page : ${pages}">
+                    <a th:href="@{'/blog?page=' + ${page}}" th:text="${page}"></a>
                 </div>
             </div>
         </div>
-        <div th:insert="blocks/footer::footer"></div>
+        <div id="footer" th:insert="blocks/footer::footer"></div>
     </body>
 </html>

@@ -1,14 +1,26 @@
 body{
     background-image: url("blog_img.jpeg");
     background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+#main_contaner{
+    min-height: 819px;
 }
 
 #articles_contaner{
+    margin-bottom: 100px;
     margin-top:20px;
-    display: block;
     margin-left: auto;
     margin-right: auto;
     width: 60%;
+}
+
+#footer{
+    position: relative;
+    margin: -1;
 }
 
 #articles_contaner .article:first-child{
@@ -16,6 +28,7 @@ body{
 }
 
 .text_block_article{
+    margin-left: 20px;
     position:relative;
     color: gold;
     font-size: 20px;
@@ -35,4 +48,21 @@ body{
     position: absolute;
     bottom: 30px;
     color: gold;
+}
+
+.pages_contaner{
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.pages_contaner a{
+    color: gold;
+    font-size: 24px;
+    padding: 0px 4px 0px 0px;
+}
+
+
+.pages_contaner a:hover, a:visited{
+    color: rgb(255, 81, 0);
 }

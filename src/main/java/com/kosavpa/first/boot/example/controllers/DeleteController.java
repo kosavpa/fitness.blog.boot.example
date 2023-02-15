@@ -5,6 +5,7 @@ import com.kosavpa.first.boot.example.dao.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -18,7 +19,8 @@ public class DeleteController {
         this.articleRepository = articleRepository;
     }
 
-    public String remove(@PathVariable(value = "id") long id){
+    @PostMapping
+    public String remove(@PathVariable long id){
         articleRepository.deleteById(id);
 
         return "redirect:/blog";

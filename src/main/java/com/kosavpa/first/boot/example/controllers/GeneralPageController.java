@@ -23,7 +23,7 @@ public class GeneralPageController {
 
     @GetMapping
     public String mainPackage(Model model){
-        Page<ArticleEntity> posts = articleService.pageableFindRequest();
+        Page<ArticleEntity> posts = articleService.pageableFindRequest(0, 3, "id");
         model.addAttribute("threePostForGeneral", posts.getContent());
 
         return "general";

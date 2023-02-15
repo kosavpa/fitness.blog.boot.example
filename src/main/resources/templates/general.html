@@ -13,18 +13,20 @@
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/i6z3vcbIOn0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/O7DgU_2ucUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <div class="article_container" th:each="article : ${threePostForGeneral}">
+            <div class="article_container">
                 <button class="tablinks" id="first_btn"></button>
                 <button class="tablinks" id="second_btn"></button>
                 <button class="tablinks" id="third_btn"></button>
-                <div th:id="'art_' + ${threePostForGeneral.indexOf(article)}" class="tabcontent">
-                    <h3 th:text="${article.title}"></h3>
-                    <p th:text="${article.anons}"></p>
-                    <a th:href="@{'/blog/' + ${article.id}}">Детальнее</a>
-                  </div>
+                <div th:each="article : ${threePostForGeneral}">
+                    <div th:id="'art_' + ${threePostForGeneral.indexOf(article)}" class="tabcontent">
+                        <h3 th:text="${article.title}"></h3>
+                        <p th:text="${article.anons}"></p>
+                        <a th:href="@{'/blog/' + ${article.id}}">Детальнее</a>
+                    </div>
+                </div>
             </div>
         </div>
         <script th:src="@{/general/article_from_general.js}"></script>
-        <div th:insert="blocks/footer::footer"></div>
+        <div id="footer" th:insert="blocks/footer::footer"></div>
     </body>
 </html>

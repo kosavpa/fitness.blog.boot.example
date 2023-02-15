@@ -24,6 +24,8 @@ public class ArticleEntity {
     private Long id;
     @Column(name = "title")
     private String title;
+    @Column(name = "image")
+    private String image;
     @Column(name = "publication_date")
     @Temporal(TemporalType.DATE)
     private Date publicationDate;

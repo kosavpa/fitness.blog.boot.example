@@ -13,12 +13,12 @@
             <p id="date" th:text="*{publicationDate}">Дата статьи</p>
             <div id="full_text"  th:utext="*{fullText}">Текст статьи</div>
             <div id="btn_contaner">
-                <form method="get">
+                <form th:action="@{'/blog/' + *{id} + '/redact'}" method="get">
                     <button type="submit">
                         <h3>Редактировать</h3>
                     </button>
                 </form>
-                <form method="post">
+                <form th:action="@{'/blog/' + *{id} + '/delete'}" method="post">
                     <button type = "submit">
                         <h3>Удалить</h3>
                     </button>

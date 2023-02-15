@@ -64,3 +64,17 @@ body{
     background-color: #ffffff21;
     cursor: pointer
 }
+
+.errors{
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 0px
+}
+
+.errors li{
+    color: rgb(128, 0, 0);
+    font-size: 26px;
+    font-family: fantasy;
+    width: 600px
+}

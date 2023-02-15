@@ -50,15 +50,22 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     @Transactional(readOnly = true)
-    public Page<ArticleEntity> pageableFindRequest() {
-        Pageable pageable = PageRequest.of(0, 3, Sort.by("publicationDate"));
+    public Page<ArticleEntity> pageableFindRequest(int page, int size, String sortBy) {
+        if(sortBy == null | sortBy.isEmpty())
+            return repository.findAll(PageRequest.of(page, size, Sort.by(sortBy).descending()));
 
-        return repository.findAll(pageable);
+        return repository.findAll(PageRequest.of(page, size, Sort.by("id").descending()));
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public long count(){
+        return repository.count();
     }
 
     @Override
     @Transactional(readOnly = true)
     public List<ArticleEntity> findAll() {
-        return repository.findAll(Sort.by("date"));
+        return repository.findAll();
     }
 }
