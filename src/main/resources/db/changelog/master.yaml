@@ -1,6 +1,6 @@
 databaseChangeLog:
 - changeSet:
-    id: 1676980728986-1
+    id: 1676991452791-1
     author: kosav (generated)
     changes:
     - createTable:
@@ -31,7 +31,7 @@ databaseChangeLog:
             type: MEDIUMTEXT
         tableName: blog_article
 - changeSet:
-    id: 1676980728986-2
+    id: 1676991452791-2
     author: kosav (generated)
     changes:
     - createTable:
@@ -54,7 +54,7 @@ databaseChangeLog:
             type: VARCHAR(255)
         tableName: blog_user
 - changeSet:
-    id: 1676980728986-3
+    id: 1676991452791-3
     author: kosav (generated)
     changes:
     - createTable:
@@ -64,7 +64,7 @@ databaseChangeLog:
             type: BIGINT
         tableName: hibernate_sequence
 - changeSet:
-    id: 1676980728986-4
+    id: 1676991452791-4
     author: kosav (generated)
     changes:
     - loadData:
@@ -104,7 +104,7 @@ databaseChangeLog:
         separator: ','
         tableName: blog_article
 - changeSet:
-    id: 1676980728986-5
+    id: 1676991452791-5
     author: kosav (generated)
     changes:
     - loadData:
@@ -132,7 +132,7 @@ databaseChangeLog:
         separator: ','
         tableName: blog_user
 - changeSet:
-    id: 1676980728986-6
+    id: 1676991452791-6
     author: kosav (generated)
     changes:
     - loadData:
