@@ -15,7 +15,20 @@ body{
 
 #form_cantaner{
     margin-top: 50px;
-    margin-right: 200px
+    margin-right: 120px;
+}
+
+#form_cantaner h1{
+    text-align: center;
+    font-family: fantasy;
+    font-weight: bold;
+    letter-spacing: 1px
+}
+
+#form_cantaner .login_input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 #form_cantaner .login_input input{
@@ -38,6 +51,13 @@ body{
     font-weight: bold
 }
 
+#form_cantaner .option_cantaner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 600px
+}
+
 #form_cantaner #remember-me{
     margin-top: 10px;
     font-size: 26px;
@@ -45,16 +65,30 @@ body{
     font-weight: bold
 }
 
-#form_cantaner h1{
-    text-align: center;
+#checkbox{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #black;
+    border-radius: 0.25em;
+    margin-left: 10px;
+}
+
+#login_to_oauth2_vk{
+    margin-top: 10px;
+    font-size: 26px;
     font-family: fantasy;
-    font-weight: bold;
-    letter-spacing: 1px
+    font-weight: bold
+}
+
+#form_cantaner .btn_cantaner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 #form_cantaner .submit_btn{
-    text-align: center;
-    margin-top: 20px
+    margin-top: 20px;
+    margin-left: 30px
 }
 
 #form_cantaner .submit_btn button{
@@ -62,20 +96,35 @@ body{
     width: 130px;
     height: 62px;
     background-image: url("btn_login.png");
-    background-size: cover;
-    border-radius: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 10px;
     border: none
 }
 
-#form_cantaner .submit_btn button:hover, button:focus{
+#form_cantaner .btn_cantaner button:hover, button:focus{
+    background-color: #ffffff21;
     background-color: #00000031;
-    cursor: pointer
+    cursor: pointer;
 }
 
-#checkbox {
-    width: 20px;
-    height: 20px;
-    border: 1px solid #black;
-    border-radius: 0.25em;
-    margin-left: 50px;
+#form_cantaner .oauth2_button{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+#form_cantaner .oauth2_button button{
+    background-color: rgba(0, 0, 0, 0);
+    width: 130px;
+    height: 62px;
+    background-image: url("vk_btn.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    border: none
+}
+
+#form_cantaner .oauth2_button button:hover, button:focus{
+    background-color: #00000031;
+    cursor: pointer
 }

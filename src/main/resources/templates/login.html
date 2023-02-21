@@ -20,9 +20,17 @@
             <div>Пароль:</div>
             <input type="password" name="password"/>
           </div>
-          <div id="remember-me">Remember Me:<input type="checkbox" id="checkbox" name="remember-me"/></div>
-          <div class="submit_btn">
-            <button type="submit"></button>
+          <div class="option_cantaner">
+            <div id="remember-me">Remember Me:<input type="checkbox" id="checkbox" name="remember-me"/></div>
+            <div id="login_to_oauth2_vk">Вход через VK:</div>
+          </div>
+          <div class="btn_cantaner">
+            <div class="submit_btn">
+              <button type="submit"></button>
+            </div>
+            <div class="oauth2_button" id="oauth2_button">
+              <button type="button"></button>
+            </div>
           </div>
         </form>
       </div>
@@ -30,6 +38,7 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/5-sfG8BV8wU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
+    <script th:src="@{/login_and_registr/vk_login_btn.js}"></script>
     <div th:insert="blocks/footer::footer"></div>
   </body>
 </html>

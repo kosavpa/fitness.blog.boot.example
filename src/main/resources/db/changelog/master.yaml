@@ -1,0 +1,150 @@
+databaseChangeLog:
+- changeSet:
+    id: 1676980728986-1
+    author: kosav (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+            name: id
+            type: BIGINT
+        - column:
+            name: anons
+            type: VARCHAR(255)
+        - column:
+            name: full_text
+            type: LONGTEXT
+        - column:
+            name: date
+            type: date
+        - column:
+            name: title
+            type: VARCHAR(255)
+        - column:
+            name: publication_date
+            type: date
+        - column:
+            name: image
+            type: MEDIUMTEXT
+        tableName: blog_article
+- changeSet:
+    id: 1676980728986-2
+    author: kosav (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+            name: id
+            type: BIGINT
+        - column:
+            name: password
+            type: VARCHAR(255)
+        - column:
+            name: role
+            type: VARCHAR(10)
+        - column:
+            name: username
+            type: VARCHAR(255)
+        tableName: blog_user
+- changeSet:
+    id: 1676980728986-3
+    author: kosav (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            name: next_val
+            type: BIGINT
+        tableName: hibernate_sequence
+- changeSet:
+    id: 1676980728986-4
+    author: kosav (generated)
+    changes:
+    - loadData:
+        columns:
+        - column:
+            header: id
+            name: id
+            type: NUMERIC
+        - column:
+            header: anons
+            name: anons
+            type: STRING
+        - column:
+            header: full_text
+            name: full_text
+            type: STRING
+        - column:
+            header: date
+            name: date
+            type: skip
+        - column:
+            header: title
+            name: title
+            type: STRING
+        - column:
+            header: publication_date
+            name: publication_date
+            type: DATE
+        - column:
+            header: image
+            name: image
+            type: STRING
+        commentLineStartsWith: '#'
+        encoding: UTF-8
+        file: data/blog_article.csv
+        quotchar: '"'
+        separator: ','
+        tableName: blog_article
+- changeSet:
+    id: 1676980728986-5
+    author: kosav (generated)
+    changes:
+    - loadData:
+        columns:
+        - column:
+            header: id
+            name: id
+            type: NUMERIC
+        - column:
+            header: password
+            name: password
+            type: STRING
+        - column:
+            header: role
+            name: role
+            type: STRING
+        - column:
+            header: username
+            name: username
+            type: STRING
+        commentLineStartsWith: '#'
+        encoding: UTF-8
+        file: data/blog_user.csv
+        quotchar: '"'
+        separator: ','
+        tableName: blog_user
+- changeSet:
+    id: 1676980728986-6
+    author: kosav (generated)
+    changes:
+    - loadData:
+        columns:
+        - column:
+            header: next_val
+            name: next_val
+            type: NUMERIC
+        commentLineStartsWith: '#'
+        encoding: UTF-8
+        file: data/hibernate_sequence.csv
+        quotchar: '"'
+        separator: ','
+        tableName: hibernate_sequence
+

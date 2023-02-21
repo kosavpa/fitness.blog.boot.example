@@ -1,0 +1,16 @@
+spring:
+  liquibase:
+    enabled: false
+    change-log: classpath:db/changelog/master.yaml
+    contexts: dev
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+      javax:
+        persistence:
+          validation:
+            mode: none
