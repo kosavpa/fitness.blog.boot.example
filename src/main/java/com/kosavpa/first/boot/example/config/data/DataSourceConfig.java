@@ -1,4 +1,4 @@
-package com.kosavpa.first.boot.example.config;
+package com.kosavpa.first.boot.example.config.data;
 
 
 import org.springframework.beans.factory.annotation.Value;

@@ -1,4 +1,4 @@
-package com.kosavpa.first.boot.example.config;
+package com.kosavpa.first.boot.example.config.web;
 
 
 import org.springframework.context.annotation.Bean;

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <head>
         <meta charset="UTF-8">
         <title>Сборник фитнес статей</title>
@@ -14,12 +15,12 @@
             <div id="full_text"  th:utext="*{fullText}">Текст статьи</div>
             <div id="btn_contaner">
                 <form th:action="@{'/blog/' + *{id} + '/redact'}" method="get">
-                    <button type="submit">
+                    <button sec:authorize="hasRole('ROLE_ADMIN')" type="submit">
                         <h3>Редактировать</h3>
                     </button>
                 </form>
                 <form th:action="@{'/blog/' + *{id} + '/delete'}" method="post">
-                    <button type = "submit">
+                    <button sec:authorize="hasRole('ROLE_ADMIN')" type = "submit">
                         <h3>Удалить</h3>
                     </button>
                 </form>
