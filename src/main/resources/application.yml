@@ -1,12 +1,11 @@
 spring:
   liquibase:
-    enabled: false
-    change-log: classpath:db/changelog/master.yaml
+    enabled: true
     contexts: dev
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect

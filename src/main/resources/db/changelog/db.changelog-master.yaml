@@ -1,7 +1,13 @@
 databaseChangeLog:
 - changeSet:
-    id: 1676991452791-1
+    id: 1677312669525-1
     author: kosav (generated)
+    preConditions:
+        onFail: MARK_RAN
+        not:
+            tableExists:
+                schemaName: fitness_blog
+                tableName: blog_article
     changes:
     - createTable:
         columns:
@@ -31,8 +37,14 @@ databaseChangeLog:
             type: MEDIUMTEXT
         tableName: blog_article
 - changeSet:
-    id: 1676991452791-2
+    id: 1677312669525-2
     author: kosav (generated)
+    preConditions:
+        onFail: MARK_RAN
+        not:
+            tableExists:
+                schemaName: fitness_blog
+                tableName: blog_user
     changes:
     - createTable:
         columns:
@@ -54,8 +66,14 @@ databaseChangeLog:
             type: VARCHAR(255)
         tableName: blog_user
 - changeSet:
-    id: 1676991452791-3
+    id: 1677312669525-3
     author: kosav (generated)
+    preConditions:
+        onFail: MARK_RAN
+        not:
+            tableExists:
+                schemaName: fitness_blog
+                tableName: hibernate_sequence
     changes:
     - createTable:
         columns:
@@ -64,8 +82,14 @@ databaseChangeLog:
             type: BIGINT
         tableName: hibernate_sequence
 - changeSet:
-    id: 1676991452791-4
+    id: 1677312669525-4
     author: kosav (generated)
+    preConditions:
+        onFail: MARK_RAN
+        not:
+            rowCount:
+                expectedRows: 29
+                tableName: blog_article
     changes:
     - loadData:
         columns:
@@ -99,13 +123,20 @@ databaseChangeLog:
             type: STRING
         commentLineStartsWith: '#'
         encoding: UTF-8
+        relativeToChangelogFile: true
         file: data/blog_article.csv
         quotchar: '"'
         separator: ','
         tableName: blog_article
 - changeSet:
-    id: 1676991452791-5
+    id: 1677312669525-5
     author: kosav (generated)
+    preConditions:
+        onFail: MARK_RAN
+        not:
+            rowCount:
+                expectedRows: 1
+                tableName: blog_user
     changes:
     - loadData:
         columns:
@@ -127,13 +158,20 @@ databaseChangeLog:
             type: STRING
         commentLineStartsWith: '#'
         encoding: UTF-8
+        relativeToChangelogFile: true
         file: data/blog_user.csv
         quotchar: '"'
         separator: ','
         tableName: blog_user
 - changeSet:
-    id: 1676991452791-6
+    id: 1677312669525-6
     author: kosav (generated)
+    preConditions:
+        onFail: MARK_RAN
+        not:
+            rowCount:
+                expectedRows: 1
+                tableName: hibernate_sequence
     changes:
     - loadData:
         columns:
@@ -143,6 +181,7 @@ databaseChangeLog:
             type: NUMERIC
         commentLineStartsWith: '#'
         encoding: UTF-8
+        relativeToChangelogFile: true
         file: data/hibernate_sequence.csv
         quotchar: '"'
         separator: ','

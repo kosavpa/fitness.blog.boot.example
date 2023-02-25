@@ -1,21 +1,28 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
       th:fragment="header">
   <link rel="stylesheet" th:href="@{/header/menu_style.css}">
 
-  <div class="main_header_contaner">
-    <div class="dropdown_menu">
-      <img th:src="@{/header/menu_button.png}" class="drop_btn"/>
-      <div id="drop_menu" class="menu_list">
-        <a th:href="@{'/'}">Home</a>
-        <a sec:authorize="!isAuthenticated()" th:href="@{'/registration'}">Registration</a>
-        <a th:href="@{'/blog'}">Articles</a>
-        <a sec:authorize="!isAuthenticated()" th:href="@{'/login'}">Login</a>
-        <a sec:authorize="isAuthenticated()" th:href="@{'/logout'}">Logout</a>
-        <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{'/add'}">Add article</a>
+  <head>
+    <meta charset="UTF-8"/>
+  </head>
+
+  <body>
+    <div class="main_header_contaner">
+      <div class="dropdown_menu">
+        <img th:src="@{/header/menu_button.png}" class="drop_btn"/>
+        <div id="drop_menu" class="menu_list">
+          <a th:href="@{'/'}">Главная</a>
+          <a sec:authorize="!isAuthenticated()" th:href="@{'/registration'}">Регистрация</a>
+          <a th:href="@{'/blog'}">Статьи</a>
+          <a sec:authorize="!isAuthenticated()" th:href="@{'/login'}">Вход</a>
+          <a sec:authorize="isAuthenticated()" th:href="@{'/logout'}">Выход</a>
+          <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{'/add'}">Добавить статью</a>
+        </div>
       </div>
     </div>
-  </div>
+  </body>
   <script th:src="@{/header/menu_animation.js}"></script>
 </html>

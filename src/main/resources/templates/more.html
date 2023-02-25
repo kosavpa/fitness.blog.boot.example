@@ -9,21 +9,23 @@
     </head>
     <body>
         <header th:insert="blocks/header::header"></header>
-        <div id="main_contaner" th:object="${article}">
-            <h1 id="header" th:text="*{title}">Заголовок</h1>
-            <p id="date" th:text="*{publicationDate}">Дата статьи</p>
-            <div id="full_text"  th:utext="*{fullText}">Текст статьи</div>
-            <div id="btn_contaner">
-                <form th:action="@{'/blog/' + *{id} + '/redact'}" method="get">
-                    <button sec:authorize="hasRole('ROLE_ADMIN')" type="submit">
-                        <h3>Редактировать</h3>
-                    </button>
-                </form>
-                <form th:action="@{'/blog/' + *{id} + '/delete'}" method="post">
-                    <button sec:authorize="hasRole('ROLE_ADMIN')" type = "submit">
-                        <h3>Удалить</h3>
-                    </button>
-                </form>
+        <div id="main_wrapper">
+            <div id="main_contaner" th:object="${article}">
+                <h1 id="header" th:text="*{title}">Заголовок</h1>
+                <p id="date" th:text="*{publicationDate}">Дата статьи</p>
+                <div id="full_text"  th:utext="*{fullText}">Текст статьи</div>
+                <div id="btn_contaner">
+                    <form th:action="@{'/blog/' + *{id} + '/redact'}" method="get">
+                        <button sec:authorize="hasRole('ROLE_ADMIN')" type="submit">
+                            <h3>Редактировать</h3>
+                        </button>
+                    </form>
+                    <form th:action="@{'/blog/' + *{id} + '/delete'}" method="post">
+                        <button sec:authorize="hasRole('ROLE_ADMIN')" type = "submit">
+                            <h3>Удалить</h3>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
         <div id="footer" th:insert="blocks/footer::footer"></div>

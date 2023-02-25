@@ -32,7 +32,7 @@ body{
     position:relative;
     color: gold;
     font-size: 20px;
-    font-style: normal;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .article{

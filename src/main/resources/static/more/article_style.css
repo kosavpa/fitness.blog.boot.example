@@ -6,6 +6,8 @@
     flex-direction: column;
     margin-bottom: 90px;
     min-height: 749px;
+    background-color: rgba(80, 80, 80, 0.465);
+    border-radius: 10px;
 }
 
 #footer{
@@ -17,6 +19,8 @@ body{
     width: 100%;
     height: 100%;
     margin: 0;
+    background-image: url("article_img.jpg");
+    background-attachment: fixed;
 }
 
 #header{
@@ -24,24 +28,29 @@ body{
     margin-bottom: 0px;
     margin-top: 60px;
     color: gold;
+    padding: 4px 10px 0px 10px;
 }
 
 #date{
     text-align: left;
     margin-top: 0px;
-    color: gold
+    color: gold;
+    padding: 4px 10px 0px 10px;
 }
 
 #full_text{
+    padding: 4px 10px 0px 10px;
+    font-size: 20px;
     text-align: justify;
     margin-bottom: 40px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     color: gold
 }
 
 #btn_contaner{
     display: flex;
     justify-content: space-between;
+    padding: 4px 10px 0px 10px;
 }
 
 #btn_contaner h3{
@@ -59,9 +68,4 @@ body{
 #btn_contaner button:hover{
     cursor: pointer;
     background-color: rgba(255, 217, 0, 0.356);
-}
-
-body{
-    background-image: url("article_img.jpg");
-    background-attachment: fixed;
 }
