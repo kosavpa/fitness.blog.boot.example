@@ -9,9 +9,18 @@
     </head>
     <body>
         <div class="main_contaner">
-            <div class="video_contaner">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Bq64q5ysJCM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/O7DgU_2ucUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="about_site">
+                <h3>О чем этот сайт:</h3>
+                Этот сайт создан чисто в учебных целях,
+                имеет ограниченный функционал и является
+                объединением двух хобби: спорт и бэк разработка.
+                На сайте имеется на данный момент около 29-ти
+                статей, к сожалению не все статьи имеют ссылку
+                на первоисточник и исследовании (затерялись в процессе).
+                Может быть, но не это не точно, сайт будет обновляться.
+            </div>
+            <div class="header_contaner">
+                <h3>Последние добавленные статьи:</h3>
             </div>
             <div class="article_container">
                 <button class="tablinks" id="first_btn"></button>
@@ -27,6 +36,6 @@
             </div>
         </div>
         <script th:src="@{/general/article_from_general.js}"></script>
-        <div id="footer" th:insert="blocks/footer::footer"></div>
     </body>
+    <div id="footer" th:insert="blocks/footer::footer"></div>
 </html>
