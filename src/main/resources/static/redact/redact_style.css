@@ -1,6 +1,23 @@
-#main_contaner{
-    display: flexbox;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("redact_img.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+#main_contaner{
+    flex: 1 0 auto;
     margin-bottom: 100px;
     margin-top: 100px;
 }
@@ -42,14 +59,6 @@
     font-family: fantasy;
 }
 
-body{
-    background-image: url("redact_img.jpg");
-    background-attachment: fixed;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-}
-
 #main_contaner h1{
     color: gold;
     font-family: 'Times New Roman', Times, serif;
@@ -78,7 +87,9 @@ body{
     background-color: rgba(240, 255, 255, 0.137);
 }
 
-#footer{
-    position: relative;
-    margin: -1;
+.footer {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
 }

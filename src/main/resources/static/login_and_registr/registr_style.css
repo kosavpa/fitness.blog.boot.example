@@ -1,16 +1,30 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body{
     background-image: url("login_and_registr_img.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+#main_contaner{
+    flex: 1 0 auto;
+}
+
+.sub_main_contaner{
+    display: flex;
+    justify-content: end;
+    margin-top: 300px
 }
 
 #video_contaner{
     margin-right: 50px
-}
-
-#main_contaner{
-    display: flex;
-    justify-content: end;
-    margin-top: 300px
 }
 
 #form_cantaner{
@@ -117,4 +131,11 @@ body{
     font-size: 26px;
     font-family: 'Times New Roman', Times, serif;
     width: 600px
+}
+
+#footer{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
 }

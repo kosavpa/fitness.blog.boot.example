@@ -9,40 +9,42 @@
       <body>
         <header th:insert="blocks/header::header"></header>
         <div id="main_contaner">
-          <div id="form_cantaner">
-            <h1>Регистрация учетной записи</h1>
-            <form th:action="@{/registration}" method="post" th:object="${userEntity}">
-              <ul class="errors">
-                <li th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></li>
-                <li th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></li>
-              </ul>
-              <div class="login_input">
-                <div>Логин:</div>
-                <input type="text" th:field="*{username}"/>
-              </div>
-              <div class="login_input">
-                <div>Пароль:</div>
-                <input type="password" th:field="*{password}"/>
-              </div>
-              <div class="option_cantaner">
-                <div>Зарегистрироваться:</div>
-                <div>Вход через VK:</div>
-              </div>
-              <div class="btn_cantaner">
-                <div class="submit_btn">
-                  <button type="submit"></button>
+          <div class="sub_main_contaner">
+            <div id="form_cantaner">
+              <h1>Регистрация учетной записи</h1>
+              <form th:action="@{/registration}" method="post" th:object="${userEntity}">
+                <ul class="errors">
+                  <li th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></li>
+                  <li th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></li>
+                </ul>
+                <div class="login_input">
+                  <div>Логин:</div>
+                  <input type="text" th:field="*{username}"/>
                 </div>
-                <div class="oauth2_button" id="oauth2_button">
-                  <button type="button"></button>
+                <div class="login_input">
+                  <div>Пароль:</div>
+                  <input type="password" th:field="*{password}"/>
                 </div>
-              </div>
-            </form>
-          </div>
-          <div id="video_contaner">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/5-sfG8BV8wU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div class="option_cantaner">
+                  <div>Зарегистрироваться:</div>
+                  <div>Вход через VK:</div>
+                </div>
+                <div class="btn_cantaner">
+                  <div class="submit_btn">
+                    <button type="submit"></button>
+                  </div>
+                  <div class="oauth2_button" id="oauth2_button">
+                    <button type="button"></button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div id="video_contaner">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/5-sfG8BV8wU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
           </div>
           <script th:src="@{/login_and_registr/vk_login_btn.js}"></script>
         </div>
-        <div th:insert="blocks/footer::footer"></div>
       </body>
+      <img th:src="@{/footer/footer_img.png}" class="footer"/>
 </html>
